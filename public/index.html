@@ -3,22 +3,18 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>GS1 prefix ranges, reconciled</title>
+    <title>GS1 prefix ranges</title>
     <meta
       name="description"
       content="An open dataset of 144 GS1 prefix ranges mapped to the issuing GS1 member organisation. A GS1 prefix identifies who allocated the number, not where the product was made."
     />
     <link rel="canonical" href="https://gs1-prefix-ranges.vercel.app/" />
-    <meta property="og:title" content="GS1 prefix ranges, reconciled" />
+    <meta property="og:title" content="GS1 prefix ranges" />
     <meta
       property="og:description"
       content="144 GS1 prefix ranges, reconciled against two sources. The prefix identifies the issuing organisation, not the country of origin."
     />
-    <meta property="og:type" content="dataset" />
-    <link
-      rel="icon"
-      href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'><text y='13' font-size='13'>▊</text></svg>"
-    />
+    <meta property="og:type" content="website" />
 
     <script type="application/ld+json">
       {
@@ -49,42 +45,58 @@
     </script>
 
     <style>
-      /* Tokens. Light is the bare :root so the un-stamped default resolves. */
+      /* ------------------------------------------------------------------
+         A reference table, not a landing page. The visual world is the
+         printed standards document: ink on paper, a rule under the running
+         head, tabular figures, and no ornament that is not a signal.
+         ------------------------------------------------------------------ */
+
       :root {
-        --ground: #fbfaf8;
-        --panel: #ffffff;
-        --ink: #14140f;
-        --muted: #5d5c53;
-        --rule: #e3e0d8;
-        --accent: #8a5a2b;
-        --accent-soft: #f3ebe1;
-        --warn-ink: #7a4a12;
-        --warn-bg: #fdf4e4;
-        --mono: ui-monospace, "SF Mono", "Cascadia Mono", Menlo, monospace;
+        --paper: #f7f5f0;
+        --panel: #fffefb;
+        --ink: #191712;
+        --ink-2: #57534a;
+        --ink-3: #8b8578;
+        --rule: #ddd8cc;
+        --rule-firm: #c3bcab;
+        --mark: #9c4221;
+        --mark-face: #f6ece4;
+        --row-lift: #fbf8f2;
+
+        --sans: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto,
+          sans-serif;
+        --mono: ui-monospace, "SF Mono", "Cascadia Mono", "Roboto Mono", Menlo,
+          monospace;
+
+        --measure: 68ch;
+        --gutter: clamp(1.15rem, 4vw, 2.5rem);
       }
+
       @media (prefers-color-scheme: dark) {
         :root:not([data-theme="light"]) {
-          --ground: #14140f;
-          --panel: #1c1c16;
-          --ink: #f2efe7;
-          --muted: #a09d92;
-          --rule: #333026;
-          --accent: #d4a373;
-          --accent-soft: #2a2318;
-          --warn-ink: #e8c48c;
-          --warn-bg: #2b2416;
+          --paper: #16150f;
+          --panel: #1e1c15;
+          --ink: #f0ece1;
+          --ink-2: #b0aa9b;
+          --ink-3: #7d776a;
+          --rule: #35322a;
+          --rule-firm: #4b4739;
+          --mark: #e0855a;
+          --mark-face: #2c2018;
+          --row-lift: #232019;
         }
       }
       :root[data-theme="dark"] {
-        --ground: #14140f;
-        --panel: #1c1c16;
-        --ink: #f2efe7;
-        --muted: #a09d92;
-        --rule: #333026;
-        --accent: #d4a373;
-        --accent-soft: #2a2318;
-        --warn-ink: #e8c48c;
-        --warn-bg: #2b2416;
+        --paper: #16150f;
+        --panel: #1e1c15;
+        --ink: #f0ece1;
+        --ink-2: #b0aa9b;
+        --ink-3: #7d776a;
+        --rule: #35322a;
+        --rule-firm: #4b4739;
+        --mark: #e0855a;
+        --mark-face: #2c2018;
+        --row-lift: #232019;
       }
 
       *,
@@ -92,329 +104,483 @@
       *::after {
         box-sizing: border-box;
       }
+
+      html {
+        scroll-behavior: smooth;
+      }
+      @media (prefers-reduced-motion: reduce) {
+        html {
+          scroll-behavior: auto;
+        }
+        * {
+          transition: none !important;
+        }
+      }
+
       body {
         margin: 0;
-        background: var(--ground);
+        background: var(--paper);
         color: var(--ink);
-        font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
-        line-height: 1.6;
+        font-family: var(--sans);
+        font-size: 1rem;
+        line-height: 1.65;
         -webkit-text-size-adjust: 100%;
+        -webkit-font-smoothing: antialiased;
       }
-      .wrap {
-        max-width: 62rem;
+
+      .page {
+        max-width: 74rem;
         margin: 0 auto;
-        padding: 3rem 1.25rem 5rem;
+        padding: 0 var(--gutter) 6rem;
+      }
+
+      /* --- Running head ------------------------------------------------ */
+
+      .masthead {
         display: flex;
-        flex-direction: column;
-        gap: 2.5rem;
+        flex-wrap: wrap;
+        align-items: baseline;
+        justify-content: space-between;
+        gap: 0.75rem 1.5rem;
+        padding: 1.6rem 0 1rem;
+        border-bottom: 1px solid var(--rule-firm);
       }
-      header {
-        display: flex;
-        flex-direction: column;
-        gap: 0.75rem;
-      }
-      .eyebrow {
-        font-family: var(--mono);
-        font-size: 0.75rem;
-        letter-spacing: 0.12em;
-        text-transform: uppercase;
-        color: var(--accent);
-      }
-      h1 {
+      .masthead h1 {
         margin: 0;
-        font-size: clamp(1.9rem, 4.5vw, 2.8rem);
-        line-height: 1.12;
-        letter-spacing: -0.02em;
+        font-size: 1.0625rem;
+        font-weight: 620;
+        letter-spacing: -0.011em;
+      }
+      .masthead dl {
+        display: flex;
+        gap: 1.5rem;
+        margin: 0;
+        font-size: 0.8125rem;
+        color: var(--ink-2);
+      }
+      .masthead dl > div {
+        display: flex;
+        gap: 0.4rem;
+      }
+      .masthead dt {
+        color: var(--ink-3);
+      }
+      .masthead dd {
+        margin: 0;
+        font-variant-numeric: tabular-nums;
+      }
+
+      /* --- Opening statement ------------------------------------------- */
+
+      .statement {
+        padding: clamp(2.75rem, 8vw, 4.75rem) 0 clamp(2rem, 5vw, 3rem);
+        max-width: 34ch;
+      }
+      .statement p {
+        margin: 0;
+        font-size: clamp(1.6rem, 4.2vw, 2.45rem);
+        line-height: 1.22;
+        letter-spacing: -0.025em;
+        font-weight: 480;
         text-wrap: balance;
       }
-      .lede {
+      .statement .not {
+        color: var(--ink-3);
+        text-decoration: line-through;
+        text-decoration-thickness: from-font;
+      }
+      .statement .is {
+        color: var(--mark);
+      }
+
+      /* --- Prose ------------------------------------------------------- */
+
+      .prose {
+        max-width: var(--measure);
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+      }
+      .prose p {
         margin: 0;
-        font-size: 1.12rem;
-        color: var(--muted);
-        max-width: 46ch;
+        color: var(--ink-2);
       }
-
-      .stats {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(8rem, 1fr));
-        gap: 1px;
-        background: var(--rule);
-        border: 1px solid var(--rule);
-        border-radius: 0.5rem;
-        overflow: hidden;
-      }
-      .stat {
-        background: var(--panel);
-        padding: 1rem 1.1rem;
-      }
-      .stat b {
-        display: block;
-        font-size: 1.6rem;
-        font-variant-numeric: tabular-nums;
-        letter-spacing: -0.01em;
-      }
-      .stat span {
-        font-size: 0.8rem;
-        color: var(--muted);
-      }
-
-      h2 {
-        margin: 0 0 0.6rem;
-        font-size: 1.3rem;
-        letter-spacing: -0.01em;
-      }
-      section > p:last-child {
-        margin-bottom: 0;
-      }
-      p {
-        margin: 0 0 0.9rem;
-        max-width: 68ch;
-      }
-
-      blockquote {
-        margin: 0 0 0.9rem;
-        padding: 0.85rem 1.1rem;
-        border-left: 2px solid var(--accent);
-        background: var(--accent-soft);
-        border-radius: 0 0.35rem 0.35rem 0;
+      .prose strong {
         color: var(--ink);
-        font-size: 0.97rem;
-        max-width: 68ch;
+        font-weight: 600;
       }
-      blockquote cite {
-        display: block;
-        margin-top: 0.4rem;
-        font-size: 0.82rem;
-        font-style: normal;
-        color: var(--muted);
-      }
-
-      .files {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
-        gap: 0.75rem;
-      }
-      .file {
-        display: block;
-        padding: 0.9rem 1.05rem;
-        background: var(--panel);
-        border: 1px solid var(--rule);
-        border-radius: 0.5rem;
-        text-decoration: none;
-        color: inherit;
-        transition: border-color 0.15s ease;
-      }
-      .file:hover,
-      .file:focus-visible {
-        border-color: var(--accent);
-      }
-      .file code {
+      .prose code {
         font-family: var(--mono);
-        font-size: 0.9rem;
-        color: var(--accent);
-      }
-      .file span {
-        display: block;
-        font-size: 0.83rem;
-        color: var(--muted);
-        margin-top: 0.15rem;
+        font-size: 0.875em;
+        color: var(--ink);
+        background: var(--mark-face);
+        padding: 0.1em 0.34em;
+        border-radius: 0.2rem;
       }
 
-      .tablewrap {
+      .quote {
+        margin: 0;
+        padding: 0 0 0 1.15rem;
+        border-left: 1px solid var(--rule-firm);
+        max-width: var(--measure);
+      }
+      .quote p {
+        margin: 0;
+        font-size: 1.0625rem;
+        line-height: 1.55;
+        color: var(--ink);
+      }
+      .quote figcaption {
+        margin-top: 0.5rem;
+        font-size: 0.8125rem;
+        color: var(--ink-3);
+      }
+
+      section {
+        padding-top: clamp(2.5rem, 6vw, 3.75rem);
+      }
+      h2 {
+        margin: 0 0 1.15rem;
+        font-size: 0.75rem;
+        font-weight: 640;
+        letter-spacing: 0.09em;
+        text-transform: uppercase;
+        color: var(--ink-3);
+        padding-bottom: 0.5rem;
+        border-bottom: 1px solid var(--rule);
+      }
+
+      /* --- Downloads --------------------------------------------------- */
+
+      .grab {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.5rem;
+      }
+      .grab a {
+        display: inline-flex;
+        align-items: baseline;
+        gap: 0.55rem;
+        padding: 0.55rem 0.9rem;
+        background: var(--panel);
+        border: 1px solid var(--rule-firm);
+        border-radius: 0.3rem;
+        text-decoration: none;
+        color: var(--ink);
+        font-family: var(--mono);
+        font-size: 0.875rem;
+        transition:
+          border-color 0.14s ease,
+          background 0.14s ease;
+      }
+      .grab a:hover,
+      .grab a:focus-visible {
+        border-color: var(--mark);
+        background: var(--mark-face);
+      }
+      .grab a em {
+        font-style: normal;
+        font-family: var(--sans);
+        font-size: 0.75rem;
+        color: var(--ink-3);
+        font-variant-numeric: tabular-nums;
+      }
+
+      /* --- Table ------------------------------------------------------- */
+
+      .toolbar {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        gap: 0.7rem;
+        margin-bottom: 1.1rem;
+      }
+      .field {
+        position: relative;
+        flex: 1 1 17rem;
+        max-width: 26rem;
+      }
+      .field input {
+        width: 100%;
+        padding: 0.55rem 0.8rem;
+        font-family: var(--sans);
+        font-size: 0.9375rem;
+        color: var(--ink);
+        background: var(--panel);
+        border: 1px solid var(--rule-firm);
+        border-radius: 0.3rem;
+      }
+      .field input::placeholder {
+        color: var(--ink-3);
+      }
+      .field input:focus-visible {
+        outline: 2px solid var(--mark);
+        outline-offset: 1px;
+        border-color: transparent;
+      }
+
+      .toggle {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.45rem;
+        font-size: 0.875rem;
+        color: var(--ink-2);
+        cursor: pointer;
+        user-select: none;
+      }
+      .toggle input {
+        accent-color: var(--mark);
+        width: 0.95rem;
+        height: 0.95rem;
+        margin: 0;
+      }
+      .tally {
+        margin-left: auto;
+        font-size: 0.8125rem;
+        color: var(--ink-3);
+        font-variant-numeric: tabular-nums;
+      }
+
+      .sheet {
         overflow-x: auto;
-        border: 1px solid var(--rule);
-        border-radius: 0.5rem;
+        border: 1px solid var(--rule-firm);
+        border-radius: 0.35rem;
         background: var(--panel);
       }
       table {
         border-collapse: collapse;
         width: 100%;
-        font-size: 0.88rem;
+        font-size: 0.875rem;
+      }
+      caption {
+        text-align: left;
+        padding: 0.7rem 1rem;
+        font-size: 0.8125rem;
+        color: var(--ink-3);
+        border-bottom: 1px solid var(--rule);
       }
       th,
       td {
         text-align: left;
-        padding: 0.5rem 0.8rem;
+        padding: 0.5rem 1rem;
         border-bottom: 1px solid var(--rule);
         white-space: nowrap;
+        vertical-align: baseline;
       }
-      th {
+      thead th {
         position: sticky;
         top: 0;
+        z-index: 1;
         background: var(--panel);
-        font-size: 0.74rem;
-        letter-spacing: 0.07em;
+        font-size: 0.6875rem;
+        font-weight: 640;
+        letter-spacing: 0.075em;
         text-transform: uppercase;
-        color: var(--muted);
+        color: var(--ink-3);
+        border-bottom: 1px solid var(--rule-firm);
+      }
+      tbody tr:nth-child(even) {
+        background: var(--row-lift);
       }
       tbody tr:last-child td {
         border-bottom: 0;
       }
-      td.pfx {
+      td.num {
         font-family: var(--mono);
         font-variant-numeric: tabular-nums;
-        color: var(--accent);
+        color: var(--ink);
       }
-      td.note {
+      td.code {
+        font-family: var(--mono);
+        color: var(--ink-3);
+      }
+      td.remark {
         white-space: normal;
-        color: var(--muted);
-        font-size: 0.83rem;
-        min-width: 16rem;
+        min-width: 19rem;
+        color: var(--ink-2);
       }
-      tr.flagged td.note {
-        color: var(--warn-ink);
-      }
-      tr.flagged {
-        background: var(--warn-bg);
+      .dash {
+        color: var(--ink-3);
       }
 
-      .controls {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 0.6rem;
-        align-items: center;
+      tr.contested td.num,
+      tr.contested td.remark {
+        color: var(--mark);
       }
-      input[type="search"] {
-        flex: 1 1 14rem;
-        padding: 0.55rem 0.8rem;
-        font: inherit;
-        font-size: 0.95rem;
-        color: var(--ink);
-        background: var(--panel);
-        border: 1px solid var(--rule);
-        border-radius: 0.4rem;
+      tr.contested td.num::after {
+        content: "*";
+        margin-left: 0.15em;
       }
-      input[type="search"]:focus-visible {
-        outline: 2px solid var(--accent);
-        outline-offset: 1px;
+
+      .empty {
+        padding: 2rem 1rem;
+        text-align: center;
+        color: var(--ink-3);
+        font-size: 0.9375rem;
       }
-      .count {
-        font-size: 0.85rem;
-        color: var(--muted);
-        font-variant-numeric: tabular-nums;
-      }
+
+      /* --- Foot -------------------------------------------------------- */
 
       footer {
-        border-top: 1px solid var(--rule);
-        padding-top: 1.25rem;
-        font-size: 0.88rem;
-        color: var(--muted);
+        margin-top: clamp(3rem, 7vw, 4.5rem);
+        padding-top: 1.2rem;
+        border-top: 1px solid var(--rule-firm);
+        font-size: 0.8125rem;
+        color: var(--ink-3);
+        max-width: var(--measure);
+      }
+      footer p {
+        margin: 0 0 0.4rem;
       }
       a {
-        color: var(--accent);
+        color: var(--mark);
+        text-underline-offset: 0.18em;
       }
-      @media (prefers-reduced-motion: reduce) {
-        * {
-          transition: none !important;
+
+      @media (max-width: 40rem) {
+        .masthead dl {
+          gap: 1rem;
+        }
+        td.remark {
+          min-width: 15rem;
         }
       }
     </style>
   </head>
+
   <body>
-    <div class="wrap">
-      <header>
-        <p class="eyebrow">Open dataset &middot; CC BY 4.0</p>
-        <h1>GS1 prefix ranges, reconciled</h1>
-        <p class="lede">
-          Which GS1 organisation issued a barcode number &mdash; and why that is
-          not the same as where the product was made.
-        </p>
+    <div class="page">
+      <header class="masthead">
+        <h1>GS1 prefix ranges</h1>
+        <dl>
+          <div><dt>Ranges</dt><dd>144</dd></div>
+          <div><dt>Sources</dt><dd>2</dd></div>
+          <div><dt>Licence</dt><dd>CC BY 4.0</dd></div>
+        </dl>
       </header>
 
-      <div class="stats">
-        <div class="stat"><b>144</b><span>ranges</span></div>
-        <div class="stat"><b>122</b><span>countries</span></div>
-        <div class="stat"><b>2</b><span>sources reconciled</span></div>
-        <div class="stat"><b>2</b><span>disagreements kept</span></div>
+      <div class="statement">
+        <p>
+          A barcode prefix tells you
+          <span class="not">where a product was made</span>
+          <span class="is">who issued the number</span>.
+        </p>
+      </div>
+
+      <div class="prose">
+        <p>
+          The leading digits of a GTIN identify
+          <strong
+            >the GS1 member organisation that allocated the number to the brand
+            owner</strong
+          >. A company registers with one organisation, usually where it has its
+          seat, and keeps those number ranges wherever it later manufactures.
+        </p>
       </div>
 
       <section>
-        <h2>What a GS1 prefix is, and what it is not</h2>
-        <p>
-          The first digits of a GTIN identify
-          <strong>the GS1 member organisation that allocated the number to the
-          brand owner</strong>. They do not identify where the product was made.
-          GS1 states this itself:
-        </p>
-        <blockquote>
-          Since GS1 user companies can manufacture products anywhere in the
-          world, GS1 Prefixes do not identify the country of origin for a given
-          product.
-          <cite>GS1</cite>
-        </blockquote>
-        <p>
-          This matters because the opposite belief is widespread. It circulates
-          in chain letters urging people to boycott a particular prefix, and most
-          lookup services reinforce it by labelling the field &ldquo;country of
-          origin&rdquo;. This dataset calls it
-          <code>issuing_organisation</code>, and
-          <code>organisation_country</code> means the country that organisation
-          sits in, not the country the goods came from. If you build a lookup on
-          this data, please do not rename those columns back.
-        </p>
-      </section>
-
-      <section>
-        <h2>Why this table rather than any other</h2>
-        <p>
-          It is reconciled against two sources rather than copied from one:
-          GS1&rsquo;s own prefix list, and English Wikipedia&rsquo;s
-          <em>List of GS1 country codes</em>. Where the two disagree,
-          GS1&rsquo;s reading is used and
-          <strong>the disagreement is kept</strong> in the <code>note</code>
-          field instead of being silently resolved. Two rows carry such a flag,
-          highlighted in the table below.
-        </p>
-        <p>
-          One caution if you maintain your own copy: several GS1 member
-          organisations publish stale versions of the list. GS1
-          Slovakia&rsquo;s still lists &ldquo;Serbia and Montenegro&rdquo;. A
-          stale source looks exactly like a current one, so check the date.
-        </p>
-      </section>
-
-      <section>
-        <h2>Download</h2>
-        <div class="files">
-          <a class="file" href="/gs1-prefix.csv" download>
-            <code>gs1-prefix.csv</code>
-            <span>The table, RFC 4180</span>
-          </a>
-          <a class="file" href="/gs1-prefix.json" download>
-            <code>gs1-prefix.json</code>
-            <span>Same, with source metadata</span>
-          </a>
-          <a class="file" href="/dcat-ap.jsonld" download>
-            <code>dcat-ap.jsonld</code>
-            <span>DCAT-AP catalogue record</span>
-          </a>
+        <h2>The source</h2>
+        <figure class="quote">
+          <p>
+            Since GS1 user companies can manufacture products anywhere in the
+            world, GS1 Prefixes do not identify the country of origin for a
+            given product.
+          </p>
+          <figcaption>GS1</figcaption>
+        </figure>
+        <div class="prose" style="margin-top: 1.35rem">
+          <p>
+            The opposite belief is widespread. It travels in chain letters
+            urging people to boycott a particular prefix, and most lookup
+            services reinforce it by labelling the field
+            <code>country_of_origin</code>. This dataset calls it
+            <code>issuing_organisation</code>, and
+            <code>organisation_country</code> is where that organisation sits,
+            not where the goods came from. If you build on this data, please
+            keep those names.
+          </p>
         </div>
       </section>
 
       <section>
-        <h2>The data</h2>
-        <div class="controls">
-          <input
-            type="search"
-            id="q"
-            placeholder="Filter by prefix, organisation or country&hellip;"
-            aria-label="Filter the table"
-          />
-          <span class="count" id="count"></span>
+        <h2>Method</h2>
+        <div class="prose">
+          <p>
+            Reconciled against two sources rather than copied from one:
+            GS1&rsquo;s own prefix list, and English Wikipedia&rsquo;s
+            <em>List of GS1 country codes</em>. Where they disagree,
+            GS1&rsquo;s reading is used and
+            <strong>the disagreement is kept</strong> in the record instead of
+            being quietly resolved. Two ranges are marked contested, and carry
+            <code>source_disagreement</code> as <code>true</code> so you can
+            filter for them without reading prose.
+          </p>
+          <p>
+            If you maintain your own copy, check the date on your source.
+            Several GS1 member organisations publish stale lists; GS1
+            Slovakia&rsquo;s still names Serbia and Montenegro. A stale list
+            looks exactly like a current one.
+          </p>
         </div>
-        <div class="tablewrap">
+      </section>
+
+      <section>
+        <h2>Files</h2>
+        <div class="grab">
+          <a href="/gs1-prefix.csv" download
+            >gs1-prefix.csv <em>6 KB</em></a
+          >
+          <a href="/gs1-prefix.json" download
+            >gs1-prefix.json <em>36 KB</em></a
+          >
+          <a href="/dcat-ap.jsonld" download
+            >dcat-ap.jsonld <em>2 KB</em></a
+          >
+        </div>
+        <div class="prose" style="margin-top: 1rem">
+          <p>
+            Served with CORS open, so you can fetch them straight from your own
+            page. Content is English throughout, including the notes.
+          </p>
+        </div>
+      </section>
+
+      <section>
+        <h2>The table</h2>
+        <div class="toolbar">
+          <div class="field">
+            <input
+              type="search"
+              id="q"
+              placeholder="Prefix, organisation, country&hellip;"
+              aria-label="Filter the table"
+              autocomplete="off"
+            />
+          </div>
+          <label class="toggle">
+            <input type="checkbox" id="only" />
+            Contested only
+          </label>
+          <span class="tally" id="tally" aria-live="polite"></span>
+        </div>
+
+        <div class="sheet">
           <table>
+            <caption id="cap">
+              Ranges marked * are where the two sources disagree.
+            </caption>
             <thead>
               <tr>
                 <th scope="col">Prefix</th>
                 <th scope="col">Issuing organisation</th>
-                <th scope="col">Organisation country</th>
+                <th scope="col">Country</th>
+                <th scope="col">ISO</th>
                 <th scope="col">Note</th>
               </tr>
             </thead>
             <tbody id="rows">
               <tr>
-                <td colspan="4" class="note">Loading&hellip;</td>
+                <td colspan="5" class="empty">Loading the table&hellip;</td>
               </tr>
             </tbody>
           </table>
@@ -429,83 +595,107 @@
           >, the Swedish-language lookup tool this table is maintained
           alongside.
         </p>
+        <p>
+          Corrections are welcome as an issue on
+          <a href="https://github.com/xoocode/gs1-prefix-ranges">GitHub</a>.
+        </p>
       </footer>
     </div>
 
     <script>
-      const rowsEl = document.getElementById("rows");
-      const countEl = document.getElementById("count");
-      const qEl = document.getElementById("q");
-      let ranges = [];
+      (function () {
+        var rowsEl = document.getElementById("rows");
+        var tallyEl = document.getElementById("tally");
+        var qEl = document.getElementById("q");
+        var onlyEl = document.getElementById("only");
+        var ranges = [];
 
-      const esc = (s) =>
-        String(s ?? "").replace(
-          /[&<>"]/g,
-          (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" })[c],
-        );
-
-      function render(list) {
-        if (!list.length) {
-          rowsEl.innerHTML =
-            '<tr><td colspan="4" class="note">No ranges match that filter.</td></tr>';
-          countEl.textContent = "0 of " + ranges.length;
-          return;
+        function esc(s) {
+          return String(s == null ? "" : s).replace(/[&<>"]/g, function (c) {
+            return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c];
+          });
         }
-        rowsEl.innerHTML = list
-          .map((r) => {
-            const pfx =
+
+        function cell(v, cls) {
+          return v
+            ? '<td class="' + cls + '">' + esc(v) + "</td>"
+            : '<td class="' + cls + '"><span class="dash">&mdash;</span></td>';
+        }
+
+        function render(list) {
+          if (!list.length) {
+            rowsEl.innerHTML =
+              '<tr><td colspan="5" class="empty">No ranges match that filter.</td></tr>';
+            tallyEl.textContent = "0 of " + ranges.length;
+            return;
+          }
+          var html = "";
+          for (var i = 0; i < list.length; i++) {
+            var r = list[i];
+            var pfx =
               r.prefixFrom === r.prefixTo
                 ? r.prefixFrom
                 : r.prefixFrom + "–" + r.prefixTo;
-            const flagged = (r.note || "").startsWith("⚠️");
-            return (
+            html +=
               '<tr class="' +
-              (flagged ? "flagged" : "") +
-              '"><td class="pfx">' +
+              (r.sourceDisagreement ? "contested" : "") +
+              '">' +
+              '<td class="num">' +
               esc(pfx) +
-              "</td><td>" +
-              esc(r.issuingOrganisation || "—") +
-              "</td><td>" +
-              esc(r.organisationCountry || "—") +
-              '</td><td class="note">' +
-              esc(r.note || "") +
-              "</td></tr>"
-            );
+              "</td>" +
+              cell(r.issuingOrganisation, "org") +
+              cell(r.organisationCountry, "country") +
+              cell(r.organisationCountryCode, "code") +
+              cell(r.note, "remark") +
+              "</tr>";
+          }
+          rowsEl.innerHTML = html;
+          tallyEl.textContent = list.length + " of " + ranges.length;
+        }
+
+        function apply() {
+          var q = qEl.value.trim().toLowerCase();
+          var list = ranges;
+          if (onlyEl.checked) {
+            list = list.filter(function (r) {
+              return r.sourceDisagreement;
+            });
+          }
+          if (q) {
+            list = list.filter(function (r) {
+              return (
+                [
+                  r.prefixFrom,
+                  r.prefixTo,
+                  r.issuingOrganisation,
+                  r.organisationCountry,
+                  r.organisationCountryCode,
+                  r.note,
+                ]
+                  .join(" ")
+                  .toLowerCase()
+                  .indexOf(q) !== -1
+              );
+            });
+          }
+          render(list);
+        }
+
+        fetch("/gs1-prefix.json")
+          .then(function (r) {
+            return r.json();
           })
-          .join("");
-        countEl.textContent = list.length + " of " + ranges.length;
-      }
-
-      function filter() {
-        const q = qEl.value.trim().toLowerCase();
-        if (!q) return render(ranges);
-        render(
-          ranges.filter((r) =>
-            [
-              r.prefixFrom,
-              r.prefixTo,
-              r.issuingOrganisation,
-              r.organisationCountry,
-              r.note,
-            ]
-              .join(" ")
-              .toLowerCase()
-              .includes(q),
-          ),
-        );
-      }
-
-      fetch("/gs1-prefix.json")
-        .then((r) => r.json())
-        .then((data) => {
-          ranges = data.ranges;
-          render(ranges);
-          qEl.addEventListener("input", filter);
-        })
-        .catch(() => {
-          rowsEl.innerHTML =
-            '<tr><td colspan="4" class="note">Could not load the data. The raw files are linked above.</td></tr>';
-        });
+          .then(function (data) {
+            ranges = data.ranges;
+            render(ranges);
+            qEl.addEventListener("input", apply);
+            onlyEl.addEventListener("change", apply);
+          })
+          .catch(function () {
+            rowsEl.innerHTML =
+              '<tr><td colspan="5" class="empty">The table could not be loaded. The raw files are linked above.</td></tr>';
+          });
+      })();
     </script>
   </body>
 </html>

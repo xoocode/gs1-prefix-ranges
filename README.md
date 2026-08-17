@@ -31,11 +31,11 @@ Where the two disagree, GS1's reading is used and **the disagreement is kept**
 in the `note` field instead of being silently resolved. 2 rows carry
 such a flag:
 
-- `612` — single-sourced: appears in Wikipedia but not in GS1's own list
+- `612` — Single-sourced: appears in Wikipedia but not in GS1's own list
 - `894` — GS1 lists this range as centrally managed; Wikipedia gives Bangladesh
 
-The `note` column itself is in Swedish, because the same table renders in the
-lookup tool linked below. Everything else is language-independent.
+Those rows carry `source_disagreement` as `true`, so you can filter for them
+without parsing prose.
 
 ⚠️ One caution if you update this yourself: several GS1 member organisations
 publish stale copies of the list. GS1 Slovakia's still lists "Serbia and
@@ -60,14 +60,14 @@ Stable URLs, safe to hotlink:
 
 ## How this is built
 
-The files are generated, not hand-edited. The source of truth is a TypeScript
-table in a private repo, exported by a script that also enforces the two rules
-that matter: the column may not be renamed to `country_of_origin`, and a new
-source disagreement without an English explanation fails the build rather than
-publishing a Swedish note in an English file.
+⚠️ **The data files are generated. Do not edit them by hand** — the next export
+overwrites the change. The source of truth is a TypeScript table in a private
+repo, exported by a script that also enforces what matters: the column may not
+be renamed to `country_of_origin`, every note and country name must have an
+English form or the build fails, and an ISO code that does not round-trip to the
+country it came from fails the build too.
 
-**Do not edit the data files directly** — regenerate and commit. Corrections to
-the underlying data are very welcome as an issue.
+Corrections to the underlying data are very welcome as an issue.
 
 ## Columns
 
@@ -77,7 +77,9 @@ the underlying data are very welcome as an issue.
 | `prefix_to` | Last prefix in the range, three digits |
 | `issuing_organisation` | The GS1 member organisation, or empty for special series |
 | `organisation_country` | Where that organisation sits. Empty when the range is not a country |
-| `note` | Restricted-distribution ranges, and any source disagreement |
+| `organisation_country_code` | ISO 3166-1 alpha-2, for joining. Empty for `540`, which covers two countries |
+| `note` | What the range is for, when it is not a plain country allocation |
+| `source_disagreement` | `true` where GS1 and Wikipedia disagree |
 
 Note that some ranges are not countries at all: `020–029` and `200–299` are
 restricted distribution decided locally, `040–049` is restricted to within a
