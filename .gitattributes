@@ -1,0 +1,6 @@
+# Datafilerna publiceras och hämtas av andra. LF överallt, oavsett plattform,
+# annars levererar en Windows-klon en CSV med CRLF som vissa parsers snubblar på.
+* text=auto eol=lf
+*.csv text eol=lf
+*.json text eol=lf
+*.jsonld text eol=lf
