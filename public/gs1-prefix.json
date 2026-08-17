@@ -1,0 +1,1022 @@
+{
+  "name": "GS1 prefix ranges, reconciled",
+  "description": "GS1 prefix ranges mapped to the issuing GS1 member organisation. A GS1 prefix identifies the organisation that allocated the number to the brand owner. It does NOT identify where the product was manufactured.",
+  "source": "https://smartatest.se/guider/ean-landsprefix",
+  "licence": "CC BY 4.0",
+  "updated": "2026-08-17",
+  "reconciledAgainst": [
+    "https://www.gs1.org/standards/id-keys/company-prefix",
+    "https://en.wikipedia.org/wiki/List_of_GS1_country_codes"
+  ],
+  "count": 144,
+  "ranges": [
+    {
+      "prefixFrom": "000",
+      "prefixTo": "019",
+      "issuingOrganisation": "GS1 US",
+      "organisationCountry": "USA",
+      "note": "UPC-A-kompatibel"
+    },
+    {
+      "prefixFrom": "020",
+      "prefixTo": "029",
+      "issuingOrganisation": null,
+      "organisationCountry": null,
+      "note": "Begränsad spridning inom en region, bestäms lokalt"
+    },
+    {
+      "prefixFrom": "030",
+      "prefixTo": "039",
+      "issuingOrganisation": "GS1 US",
+      "organisationCountry": "USA",
+      "note": "Bland annat läkemedel i USA"
+    },
+    {
+      "prefixFrom": "040",
+      "prefixTo": "049",
+      "issuingOrganisation": null,
+      "organisationCountry": null,
+      "note": "Begränsad spridning inom ett företag"
+    },
+    {
+      "prefixFrom": "050",
+      "prefixTo": "059",
+      "issuingOrganisation": "GS1 US",
+      "organisationCountry": "USA",
+      "note": "Reserverat för framtida bruk"
+    },
+    {
+      "prefixFrom": "060",
+      "prefixTo": "139",
+      "issuingOrganisation": "GS1 US",
+      "organisationCountry": "USA",
+      "note": null
+    },
+    {
+      "prefixFrom": "200",
+      "prefixTo": "299",
+      "issuingOrganisation": null,
+      "organisationCountry": null,
+      "note": "Begränsad spridning inom en region, bestäms lokalt"
+    },
+    {
+      "prefixFrom": "300",
+      "prefixTo": "379",
+      "issuingOrganisation": "GS1 France",
+      "organisationCountry": "Frankrike",
+      "note": "Även Monaco"
+    },
+    {
+      "prefixFrom": "380",
+      "prefixTo": "380",
+      "issuingOrganisation": "GS1 Bulgaria",
+      "organisationCountry": "Bulgarien",
+      "note": null
+    },
+    {
+      "prefixFrom": "381",
+      "prefixTo": "381",
+      "issuingOrganisation": "GS1 Kosovo",
+      "organisationCountry": "Kosovo",
+      "note": null
+    },
+    {
+      "prefixFrom": "383",
+      "prefixTo": "383",
+      "issuingOrganisation": "GS1 Slovenija",
+      "organisationCountry": "Slovenien",
+      "note": null
+    },
+    {
+      "prefixFrom": "385",
+      "prefixTo": "385",
+      "issuingOrganisation": "GS1 Croatia",
+      "organisationCountry": "Kroatien",
+      "note": null
+    },
+    {
+      "prefixFrom": "387",
+      "prefixTo": "387",
+      "issuingOrganisation": "GS1 BIH",
+      "organisationCountry": "Bosnien och Hercegovina",
+      "note": null
+    },
+    {
+      "prefixFrom": "389",
+      "prefixTo": "389",
+      "issuingOrganisation": "GS1 Montenegro",
+      "organisationCountry": "Montenegro",
+      "note": null
+    },
+    {
+      "prefixFrom": "400",
+      "prefixTo": "440",
+      "issuingOrganisation": "GS1 Germany",
+      "organisationCountry": "Tyskland",
+      "note": null
+    },
+    {
+      "prefixFrom": "450",
+      "prefixTo": "459",
+      "issuingOrganisation": "GS1 Japan",
+      "organisationCountry": "Japan",
+      "note": null
+    },
+    {
+      "prefixFrom": "460",
+      "prefixTo": "469",
+      "issuingOrganisation": "GS1 Russia",
+      "organisationCountry": "Ryssland",
+      "note": null
+    },
+    {
+      "prefixFrom": "470",
+      "prefixTo": "470",
+      "issuingOrganisation": "GS1 Kyrgyzstan",
+      "organisationCountry": "Kirgizistan",
+      "note": null
+    },
+    {
+      "prefixFrom": "471",
+      "prefixTo": "471",
+      "issuingOrganisation": "GS1 Chinese Taipei",
+      "organisationCountry": "Taiwan",
+      "note": null
+    },
+    {
+      "prefixFrom": "474",
+      "prefixTo": "474",
+      "issuingOrganisation": "GS1 Estonia",
+      "organisationCountry": "Estland",
+      "note": null
+    },
+    {
+      "prefixFrom": "475",
+      "prefixTo": "475",
+      "issuingOrganisation": "GS1 Latvia",
+      "organisationCountry": "Lettland",
+      "note": null
+    },
+    {
+      "prefixFrom": "476",
+      "prefixTo": "476",
+      "issuingOrganisation": "GS1 Azerbaijan",
+      "organisationCountry": "Azerbajdzjan",
+      "note": null
+    },
+    {
+      "prefixFrom": "477",
+      "prefixTo": "477",
+      "issuingOrganisation": "GS1 Lithuania",
+      "organisationCountry": "Litauen",
+      "note": null
+    },
+    {
+      "prefixFrom": "478",
+      "prefixTo": "478",
+      "issuingOrganisation": "GS1 Uzbekistan",
+      "organisationCountry": "Uzbekistan",
+      "note": null
+    },
+    {
+      "prefixFrom": "479",
+      "prefixTo": "479",
+      "issuingOrganisation": "GS1 Sri Lanka",
+      "organisationCountry": "Sri Lanka",
+      "note": null
+    },
+    {
+      "prefixFrom": "480",
+      "prefixTo": "480",
+      "issuingOrganisation": "GS1 Philippines",
+      "organisationCountry": "Filippinerna",
+      "note": null
+    },
+    {
+      "prefixFrom": "481",
+      "prefixTo": "481",
+      "issuingOrganisation": "GS1 Belarus",
+      "organisationCountry": "Belarus",
+      "note": null
+    },
+    {
+      "prefixFrom": "482",
+      "prefixTo": "482",
+      "issuingOrganisation": "GS1 Ukraine",
+      "organisationCountry": "Ukraina",
+      "note": null
+    },
+    {
+      "prefixFrom": "483",
+      "prefixTo": "483",
+      "issuingOrganisation": "GS1 Turkmenistan",
+      "organisationCountry": "Turkmenistan",
+      "note": null
+    },
+    {
+      "prefixFrom": "484",
+      "prefixTo": "484",
+      "issuingOrganisation": "GS1 Moldova",
+      "organisationCountry": "Moldavien",
+      "note": null
+    },
+    {
+      "prefixFrom": "485",
+      "prefixTo": "485",
+      "issuingOrganisation": "GS1 Armenia",
+      "organisationCountry": "Armenien",
+      "note": null
+    },
+    {
+      "prefixFrom": "486",
+      "prefixTo": "486",
+      "issuingOrganisation": "GS1 Georgia",
+      "organisationCountry": "Georgien",
+      "note": null
+    },
+    {
+      "prefixFrom": "487",
+      "prefixTo": "487",
+      "issuingOrganisation": "GS1 Kazakstan",
+      "organisationCountry": "Kazakstan",
+      "note": null
+    },
+    {
+      "prefixFrom": "488",
+      "prefixTo": "488",
+      "issuingOrganisation": "GS1 Tajikistan",
+      "organisationCountry": "Tadzjikistan",
+      "note": null
+    },
+    {
+      "prefixFrom": "489",
+      "prefixTo": "489",
+      "issuingOrganisation": "GS1 Hong Kong, China",
+      "organisationCountry": "Hongkong",
+      "note": null
+    },
+    {
+      "prefixFrom": "490",
+      "prefixTo": "499",
+      "issuingOrganisation": "GS1 Japan",
+      "organisationCountry": "Japan",
+      "note": null
+    },
+    {
+      "prefixFrom": "500",
+      "prefixTo": "509",
+      "issuingOrganisation": "GS1 UK",
+      "organisationCountry": "Storbritannien",
+      "note": null
+    },
+    {
+      "prefixFrom": "520",
+      "prefixTo": "521",
+      "issuingOrganisation": "GS1 Association Greece",
+      "organisationCountry": "Grekland",
+      "note": null
+    },
+    {
+      "prefixFrom": "528",
+      "prefixTo": "528",
+      "issuingOrganisation": "GS1 Lebanon",
+      "organisationCountry": "Libanon",
+      "note": null
+    },
+    {
+      "prefixFrom": "529",
+      "prefixTo": "529",
+      "issuingOrganisation": "GS1 Cyprus",
+      "organisationCountry": "Cypern",
+      "note": null
+    },
+    {
+      "prefixFrom": "530",
+      "prefixTo": "530",
+      "issuingOrganisation": "GS1 Albania",
+      "organisationCountry": "Albanien",
+      "note": null
+    },
+    {
+      "prefixFrom": "531",
+      "prefixTo": "531",
+      "issuingOrganisation": "GS1 Macedonia",
+      "organisationCountry": "Nordmakedonien",
+      "note": null
+    },
+    {
+      "prefixFrom": "535",
+      "prefixTo": "535",
+      "issuingOrganisation": "GS1 Malta",
+      "organisationCountry": "Malta",
+      "note": null
+    },
+    {
+      "prefixFrom": "539",
+      "prefixTo": "539",
+      "issuingOrganisation": "GS1 Ireland",
+      "organisationCountry": "Irland",
+      "note": null
+    },
+    {
+      "prefixFrom": "540",
+      "prefixTo": "549",
+      "issuingOrganisation": "GS1 Belgium & Luxembourg",
+      "organisationCountry": "Belgien och Luxemburg",
+      "note": null
+    },
+    {
+      "prefixFrom": "560",
+      "prefixTo": "560",
+      "issuingOrganisation": "GS1 Portugal",
+      "organisationCountry": "Portugal",
+      "note": null
+    },
+    {
+      "prefixFrom": "569",
+      "prefixTo": "569",
+      "issuingOrganisation": "GS1 Iceland",
+      "organisationCountry": "Island",
+      "note": null
+    },
+    {
+      "prefixFrom": "570",
+      "prefixTo": "579",
+      "issuingOrganisation": "GS1 Denmark",
+      "organisationCountry": "Danmark",
+      "note": "Även Färöarna och Grönland"
+    },
+    {
+      "prefixFrom": "590",
+      "prefixTo": "590",
+      "issuingOrganisation": "GS1 Poland",
+      "organisationCountry": "Polen",
+      "note": null
+    },
+    {
+      "prefixFrom": "594",
+      "prefixTo": "594",
+      "issuingOrganisation": "GS1 Romania",
+      "organisationCountry": "Rumänien",
+      "note": null
+    },
+    {
+      "prefixFrom": "599",
+      "prefixTo": "599",
+      "issuingOrganisation": "GS1 Hungary",
+      "organisationCountry": "Ungern",
+      "note": null
+    },
+    {
+      "prefixFrom": "600",
+      "prefixTo": "601",
+      "issuingOrganisation": "GS1 South Africa",
+      "organisationCountry": "Sydafrika",
+      "note": null
+    },
+    {
+      "prefixFrom": "603",
+      "prefixTo": "603",
+      "issuingOrganisation": "GS1 Ghana",
+      "organisationCountry": "Ghana",
+      "note": null
+    },
+    {
+      "prefixFrom": "604",
+      "prefixTo": "604",
+      "issuingOrganisation": "GS1 Senegal",
+      "organisationCountry": "Senegal",
+      "note": null
+    },
+    {
+      "prefixFrom": "605",
+      "prefixTo": "605",
+      "issuingOrganisation": "GS1 Uganda",
+      "organisationCountry": "Uganda",
+      "note": null
+    },
+    {
+      "prefixFrom": "606",
+      "prefixTo": "606",
+      "issuingOrganisation": "GS1 Angola",
+      "organisationCountry": "Angola",
+      "note": null
+    },
+    {
+      "prefixFrom": "607",
+      "prefixTo": "607",
+      "issuingOrganisation": "GS1 Oman",
+      "organisationCountry": "Oman",
+      "note": null
+    },
+    {
+      "prefixFrom": "608",
+      "prefixTo": "608",
+      "issuingOrganisation": "GS1 Bahrain",
+      "organisationCountry": "Bahrain",
+      "note": null
+    },
+    {
+      "prefixFrom": "609",
+      "prefixTo": "609",
+      "issuingOrganisation": "GS1 Mauritius",
+      "organisationCountry": "Mauritius",
+      "note": null
+    },
+    {
+      "prefixFrom": "610",
+      "prefixTo": "610",
+      "issuingOrganisation": null,
+      "organisationCountry": null,
+      "note": "Förvaltas centralt av GS1, inte utdelat"
+    },
+    {
+      "prefixFrom": "611",
+      "prefixTo": "611",
+      "issuingOrganisation": "GS1 Morocco",
+      "organisationCountry": "Marocko",
+      "note": null
+    },
+    {
+      "prefixFrom": "612",
+      "prefixTo": "612",
+      "issuingOrganisation": "GS1 Somalia",
+      "organisationCountry": "Somalia",
+      "note": "⚠️ Enkelkälla: finns hos Wikipedia men inte i GS1:s egen lista"
+    },
+    {
+      "prefixFrom": "613",
+      "prefixTo": "613",
+      "issuingOrganisation": "GS1 Algeria",
+      "organisationCountry": "Algeriet",
+      "note": null
+    },
+    {
+      "prefixFrom": "614",
+      "prefixTo": "614",
+      "issuingOrganisation": null,
+      "organisationCountry": null,
+      "note": "Förvaltas centralt av GS1, inte utdelat"
+    },
+    {
+      "prefixFrom": "615",
+      "prefixTo": "615",
+      "issuingOrganisation": "GS1 Nigeria",
+      "organisationCountry": "Nigeria",
+      "note": null
+    },
+    {
+      "prefixFrom": "616",
+      "prefixTo": "616",
+      "issuingOrganisation": "GS1 Kenya",
+      "organisationCountry": "Kenya",
+      "note": null
+    },
+    {
+      "prefixFrom": "617",
+      "prefixTo": "617",
+      "issuingOrganisation": "GS1 Cameroon",
+      "organisationCountry": "Kamerun",
+      "note": null
+    },
+    {
+      "prefixFrom": "618",
+      "prefixTo": "618",
+      "issuingOrganisation": "GS1 Côte d'Ivoire",
+      "organisationCountry": "Elfenbenskusten",
+      "note": null
+    },
+    {
+      "prefixFrom": "619",
+      "prefixTo": "619",
+      "issuingOrganisation": "GS1 Tunisia",
+      "organisationCountry": "Tunisien",
+      "note": null
+    },
+    {
+      "prefixFrom": "620",
+      "prefixTo": "620",
+      "issuingOrganisation": "GS1 Tanzania",
+      "organisationCountry": "Tanzania",
+      "note": null
+    },
+    {
+      "prefixFrom": "621",
+      "prefixTo": "621",
+      "issuingOrganisation": "GS1 Syria",
+      "organisationCountry": "Syrien",
+      "note": null
+    },
+    {
+      "prefixFrom": "622",
+      "prefixTo": "622",
+      "issuingOrganisation": "GS1 Egypt",
+      "organisationCountry": "Egypten",
+      "note": null
+    },
+    {
+      "prefixFrom": "623",
+      "prefixTo": "623",
+      "issuingOrganisation": null,
+      "organisationCountry": null,
+      "note": "Förvaltas centralt av GS1. Var Brunei fram till 2021"
+    },
+    {
+      "prefixFrom": "624",
+      "prefixTo": "624",
+      "issuingOrganisation": "GS1 Libya",
+      "organisationCountry": "Libyen",
+      "note": null
+    },
+    {
+      "prefixFrom": "625",
+      "prefixTo": "625",
+      "issuingOrganisation": "GS1 Jordan",
+      "organisationCountry": "Jordanien",
+      "note": null
+    },
+    {
+      "prefixFrom": "626",
+      "prefixTo": "626",
+      "issuingOrganisation": "GS1 Iran",
+      "organisationCountry": "Iran",
+      "note": null
+    },
+    {
+      "prefixFrom": "627",
+      "prefixTo": "627",
+      "issuingOrganisation": "GS1 Kuwait",
+      "organisationCountry": "Kuwait",
+      "note": null
+    },
+    {
+      "prefixFrom": "628",
+      "prefixTo": "628",
+      "issuingOrganisation": "GS1 Saudi Arabia",
+      "organisationCountry": "Saudiarabien",
+      "note": null
+    },
+    {
+      "prefixFrom": "629",
+      "prefixTo": "629",
+      "issuingOrganisation": "GS1 Emirates",
+      "organisationCountry": "Förenade Arabemiraten",
+      "note": null
+    },
+    {
+      "prefixFrom": "630",
+      "prefixTo": "630",
+      "issuingOrganisation": "GS1 Qatar",
+      "organisationCountry": "Qatar",
+      "note": null
+    },
+    {
+      "prefixFrom": "631",
+      "prefixTo": "631",
+      "issuingOrganisation": "GS1 Namibia",
+      "organisationCountry": "Namibia",
+      "note": null
+    },
+    {
+      "prefixFrom": "632",
+      "prefixTo": "632",
+      "issuingOrganisation": "GS1 Rwanda",
+      "organisationCountry": "Rwanda",
+      "note": null
+    },
+    {
+      "prefixFrom": "640",
+      "prefixTo": "649",
+      "issuingOrganisation": "GS1 Finland",
+      "organisationCountry": "Finland",
+      "note": null
+    },
+    {
+      "prefixFrom": "680",
+      "prefixTo": "681",
+      "issuingOrganisation": "GS1 China",
+      "organisationCountry": "Kina",
+      "note": null
+    },
+    {
+      "prefixFrom": "690",
+      "prefixTo": "699",
+      "issuingOrganisation": "GS1 China",
+      "organisationCountry": "Kina",
+      "note": null
+    },
+    {
+      "prefixFrom": "700",
+      "prefixTo": "709",
+      "issuingOrganisation": "GS1 Norway",
+      "organisationCountry": "Norge",
+      "note": null
+    },
+    {
+      "prefixFrom": "729",
+      "prefixTo": "729",
+      "issuingOrganisation": "GS1 Israel",
+      "organisationCountry": "Israel",
+      "note": null
+    },
+    {
+      "prefixFrom": "730",
+      "prefixTo": "739",
+      "issuingOrganisation": "GS1 Sweden",
+      "organisationCountry": "Sverige",
+      "note": null
+    },
+    {
+      "prefixFrom": "740",
+      "prefixTo": "740",
+      "issuingOrganisation": "GS1 Guatemala",
+      "organisationCountry": "Guatemala",
+      "note": null
+    },
+    {
+      "prefixFrom": "741",
+      "prefixTo": "741",
+      "issuingOrganisation": "GS1 El Salvador",
+      "organisationCountry": "El Salvador",
+      "note": null
+    },
+    {
+      "prefixFrom": "742",
+      "prefixTo": "742",
+      "issuingOrganisation": "GS1 Honduras",
+      "organisationCountry": "Honduras",
+      "note": null
+    },
+    {
+      "prefixFrom": "743",
+      "prefixTo": "743",
+      "issuingOrganisation": "GS1 Nicaragua",
+      "organisationCountry": "Nicaragua",
+      "note": null
+    },
+    {
+      "prefixFrom": "744",
+      "prefixTo": "744",
+      "issuingOrganisation": "GS1 Costa Rica",
+      "organisationCountry": "Costa Rica",
+      "note": null
+    },
+    {
+      "prefixFrom": "745",
+      "prefixTo": "745",
+      "issuingOrganisation": "GS1 Panama",
+      "organisationCountry": "Panama",
+      "note": null
+    },
+    {
+      "prefixFrom": "746",
+      "prefixTo": "746",
+      "issuingOrganisation": "GS1 Republica Dominicana",
+      "organisationCountry": "Dominikanska republiken",
+      "note": null
+    },
+    {
+      "prefixFrom": "750",
+      "prefixTo": "750",
+      "issuingOrganisation": "GS1 Mexico",
+      "organisationCountry": "Mexiko",
+      "note": null
+    },
+    {
+      "prefixFrom": "754",
+      "prefixTo": "755",
+      "issuingOrganisation": "GS1 Canada",
+      "organisationCountry": "Kanada",
+      "note": null
+    },
+    {
+      "prefixFrom": "758",
+      "prefixTo": "758",
+      "issuingOrganisation": null,
+      "organisationCountry": null,
+      "note": "Förvaltas centralt av GS1, inte utdelat"
+    },
+    {
+      "prefixFrom": "759",
+      "prefixTo": "759",
+      "issuingOrganisation": "GS1 Venezuela",
+      "organisationCountry": "Venezuela",
+      "note": null
+    },
+    {
+      "prefixFrom": "760",
+      "prefixTo": "769",
+      "issuingOrganisation": "GS1 Switzerland",
+      "organisationCountry": "Schweiz",
+      "note": "Även Liechtenstein"
+    },
+    {
+      "prefixFrom": "770",
+      "prefixTo": "771",
+      "issuingOrganisation": "GS1 Colombia",
+      "organisationCountry": "Colombia",
+      "note": null
+    },
+    {
+      "prefixFrom": "773",
+      "prefixTo": "773",
+      "issuingOrganisation": "GS1 Uruguay",
+      "organisationCountry": "Uruguay",
+      "note": null
+    },
+    {
+      "prefixFrom": "775",
+      "prefixTo": "775",
+      "issuingOrganisation": "GS1 Peru",
+      "organisationCountry": "Peru",
+      "note": null
+    },
+    {
+      "prefixFrom": "777",
+      "prefixTo": "777",
+      "issuingOrganisation": "GS1 Bolivia",
+      "organisationCountry": "Bolivia",
+      "note": null
+    },
+    {
+      "prefixFrom": "778",
+      "prefixTo": "779",
+      "issuingOrganisation": "GS1 Argentina",
+      "organisationCountry": "Argentina",
+      "note": null
+    },
+    {
+      "prefixFrom": "780",
+      "prefixTo": "780",
+      "issuingOrganisation": "GS1 Chile",
+      "organisationCountry": "Chile",
+      "note": null
+    },
+    {
+      "prefixFrom": "784",
+      "prefixTo": "784",
+      "issuingOrganisation": "GS1 Paraguay",
+      "organisationCountry": "Paraguay",
+      "note": null
+    },
+    {
+      "prefixFrom": "786",
+      "prefixTo": "786",
+      "issuingOrganisation": "GS1 Ecuador",
+      "organisationCountry": "Ecuador",
+      "note": null
+    },
+    {
+      "prefixFrom": "789",
+      "prefixTo": "790",
+      "issuingOrganisation": "GS1 Brasil",
+      "organisationCountry": "Brasilien",
+      "note": null
+    },
+    {
+      "prefixFrom": "800",
+      "prefixTo": "839",
+      "issuingOrganisation": "GS1 Italy",
+      "organisationCountry": "Italien",
+      "note": "Även San Marino och Vatikanstaten"
+    },
+    {
+      "prefixFrom": "840",
+      "prefixTo": "849",
+      "issuingOrganisation": "GS1 Spain",
+      "organisationCountry": "Spanien",
+      "note": "Även Andorra"
+    },
+    {
+      "prefixFrom": "850",
+      "prefixTo": "850",
+      "issuingOrganisation": "GS1 Cuba",
+      "organisationCountry": "Kuba",
+      "note": null
+    },
+    {
+      "prefixFrom": "858",
+      "prefixTo": "858",
+      "issuingOrganisation": "GS1 Slovakia",
+      "organisationCountry": "Slovakien",
+      "note": null
+    },
+    {
+      "prefixFrom": "859",
+      "prefixTo": "859",
+      "issuingOrganisation": "GS1 Czech",
+      "organisationCountry": "Tjeckien",
+      "note": null
+    },
+    {
+      "prefixFrom": "860",
+      "prefixTo": "860",
+      "issuingOrganisation": "GS1 Serbia",
+      "organisationCountry": "Serbien",
+      "note": null
+    },
+    {
+      "prefixFrom": "865",
+      "prefixTo": "865",
+      "issuingOrganisation": "GS1 Mongolia",
+      "organisationCountry": "Mongoliet",
+      "note": null
+    },
+    {
+      "prefixFrom": "867",
+      "prefixTo": "867",
+      "issuingOrganisation": "GS1 North Korea",
+      "organisationCountry": "Nordkorea",
+      "note": null
+    },
+    {
+      "prefixFrom": "868",
+      "prefixTo": "869",
+      "issuingOrganisation": "GS1 Türkiye",
+      "organisationCountry": "Turkiet",
+      "note": null
+    },
+    {
+      "prefixFrom": "870",
+      "prefixTo": "879",
+      "issuingOrganisation": "GS1 Netherlands",
+      "organisationCountry": "Nederländerna",
+      "note": null
+    },
+    {
+      "prefixFrom": "880",
+      "prefixTo": "881",
+      "issuingOrganisation": "GS1 South Korea",
+      "organisationCountry": "Sydkorea",
+      "note": null
+    },
+    {
+      "prefixFrom": "883",
+      "prefixTo": "883",
+      "issuingOrganisation": "GS1 Myanmar",
+      "organisationCountry": "Myanmar",
+      "note": null
+    },
+    {
+      "prefixFrom": "884",
+      "prefixTo": "884",
+      "issuingOrganisation": "GS1 Cambodia",
+      "organisationCountry": "Kambodja",
+      "note": null
+    },
+    {
+      "prefixFrom": "885",
+      "prefixTo": "885",
+      "issuingOrganisation": "GS1 Thailand",
+      "organisationCountry": "Thailand",
+      "note": null
+    },
+    {
+      "prefixFrom": "887",
+      "prefixTo": "887",
+      "issuingOrganisation": "GS1 Laos",
+      "organisationCountry": "Laos",
+      "note": null
+    },
+    {
+      "prefixFrom": "888",
+      "prefixTo": "888",
+      "issuingOrganisation": "GS1 Singapore",
+      "organisationCountry": "Singapore",
+      "note": null
+    },
+    {
+      "prefixFrom": "890",
+      "prefixTo": "890",
+      "issuingOrganisation": "GS1 India",
+      "organisationCountry": "Indien",
+      "note": null
+    },
+    {
+      "prefixFrom": "893",
+      "prefixTo": "893",
+      "issuingOrganisation": "GS1 Vietnam",
+      "organisationCountry": "Vietnam",
+      "note": null
+    },
+    {
+      "prefixFrom": "894",
+      "prefixTo": "894",
+      "issuingOrganisation": null,
+      "organisationCountry": null,
+      "note": "⚠️ Förvaltas centralt enligt GS1. Wikipedia anger Bangladesh"
+    },
+    {
+      "prefixFrom": "896",
+      "prefixTo": "896",
+      "issuingOrganisation": "GS1 Pakistan",
+      "organisationCountry": "Pakistan",
+      "note": null
+    },
+    {
+      "prefixFrom": "899",
+      "prefixTo": "899",
+      "issuingOrganisation": "GS1 Indonesia",
+      "organisationCountry": "Indonesien",
+      "note": null
+    },
+    {
+      "prefixFrom": "900",
+      "prefixTo": "919",
+      "issuingOrganisation": "GS1 Austria",
+      "organisationCountry": "Österrike",
+      "note": null
+    },
+    {
+      "prefixFrom": "930",
+      "prefixTo": "939",
+      "issuingOrganisation": "GS1 Australia",
+      "organisationCountry": "Australien",
+      "note": null
+    },
+    {
+      "prefixFrom": "940",
+      "prefixTo": "949",
+      "issuingOrganisation": "GS1 New Zealand",
+      "organisationCountry": "Nya Zeeland",
+      "note": null
+    },
+    {
+      "prefixFrom": "950",
+      "prefixTo": "950",
+      "issuingOrganisation": "GS1 Global Office",
+      "organisationCountry": null,
+      "note": "Stöder länder utan egen medlemsorganisation"
+    },
+    {
+      "prefixFrom": "951",
+      "prefixTo": "951",
+      "issuingOrganisation": "GS1 Global Office",
+      "organisationCountry": null,
+      "note": "EPC General Identifier"
+    },
+    {
+      "prefixFrom": "952",
+      "prefixTo": "952",
+      "issuingOrganisation": "GS1 Global Office",
+      "organisationCountry": null,
+      "note": "Demonstrationer och exempel"
+    },
+    {
+      "prefixFrom": "955",
+      "prefixTo": "955",
+      "issuingOrganisation": "GS1 Malaysia",
+      "organisationCountry": "Malaysia",
+      "note": null
+    },
+    {
+      "prefixFrom": "958",
+      "prefixTo": "958",
+      "issuingOrganisation": "GS1 Macau, China",
+      "organisationCountry": "Macao",
+      "note": null
+    },
+    {
+      "prefixFrom": "960",
+      "prefixTo": "969",
+      "issuingOrganisation": "GS1 Global Office",
+      "organisationCountry": null,
+      "note": "GTIN-8, kortare koder för små förpackningar"
+    },
+    {
+      "prefixFrom": "977",
+      "prefixTo": "977",
+      "issuingOrganisation": null,
+      "organisationCountry": null,
+      "note": "Tidskrifter, ISSN"
+    },
+    {
+      "prefixFrom": "978",
+      "prefixTo": "979",
+      "issuingOrganisation": null,
+      "organisationCountry": null,
+      "note": "Böcker, ISBN. 979-0 är noter, ISMN"
+    },
+    {
+      "prefixFrom": "980",
+      "prefixTo": "980",
+      "issuingOrganisation": null,
+      "organisationCountry": null,
+      "note": "Kvitton för återbäring"
+    },
+    {
+      "prefixFrom": "981",
+      "prefixTo": "983",
+      "issuingOrganisation": null,
+      "organisationCountry": null,
+      "note": "Kuponger i gemensamma valutaområden"
+    },
+    {
+      "prefixFrom": "990",
+      "prefixTo": "999",
+      "issuingOrganisation": null,
+      "organisationCountry": null,
+      "note": "Kuponger"
+    }
+  ]
+}

@@ -1,0 +1,43 @@
+{
+  "@context": "https://www.w3.org/ns/dcat.jsonld",
+  "@type": "dcat:Catalog",
+  "dct:title": "GS1-prefix, avstämd tabell",
+  "dct:publisher": {
+    "@type": "foaf:Agent",
+    "foaf:name": "redpoint9"
+  },
+  "dcat:dataset": [
+    {
+      "@id": "https://smartatest.se/data/gs1-prefix",
+      "@type": "dcat:Dataset",
+      "dct:title": "GS1-prefix och utfärdande organisation",
+      "dct:description": "Tabell över GS1:s prefixintervall och vilken GS1-organisation som delar ut numren i varje intervall. Prefixet identifierar utfärdande organisation, inte varans ursprungsland. Tabellen är avstämd mot GS1:s egen lista och engelska Wikipedia; avvikelser mellan källorna är noterade i fältet note i stället för att tyst lösas upp.",
+      "dct:issued": "2026-08-17",
+      "dct:modified": "2026-08-17",
+      "dct:accrualPeriodicity": "http://publications.europa.eu/resource/authority/frequency/IRREG",
+      "dct:license": "https://creativecommons.org/licenses/by/4.0/",
+      "dcat:keyword": [
+        "GS1",
+        "GTIN",
+        "EAN",
+        "streckkod",
+        "prefix"
+      ],
+      "dcat:distribution": [
+        {
+          "@type": "dcat:Distribution",
+          "dct:title": "CSV",
+          "dcat:accessURL": "https://smartatest.se/data/gs1-prefix.csv",
+          "dcat:mediaType": "text/csv"
+        },
+        {
+          "@type": "dcat:Distribution",
+          "dct:title": "JSON",
+          "dcat:accessURL": "https://smartatest.se/data/gs1-prefix.json",
+          "dcat:mediaType": "application/json"
+        }
+      ]
+    }
+  ],
+  "_count": 144
+}

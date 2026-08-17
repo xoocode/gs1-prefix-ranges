@@ -1,0 +1,511 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>GS1 prefix ranges, reconciled</title>
+    <meta
+      name="description"
+      content="An open dataset of 144 GS1 prefix ranges mapped to the issuing GS1 member organisation. A GS1 prefix identifies who allocated the number, not where the product was made."
+    />
+    <link rel="canonical" href="https://gs1-prefix-ranges.vercel.app/" />
+    <meta property="og:title" content="GS1 prefix ranges, reconciled" />
+    <meta
+      property="og:description"
+      content="144 GS1 prefix ranges, reconciled against two sources. The prefix identifies the issuing organisation, not the country of origin."
+    />
+    <meta property="og:type" content="dataset" />
+    <link
+      rel="icon"
+      href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'><text y='13' font-size='13'>▊</text></svg>"
+    />
+
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Dataset",
+        "name": "GS1 prefix ranges, reconciled",
+        "description": "A table of GS1 prefix ranges and the GS1 member organisation that issues numbers in each range. The prefix identifies the issuing organisation, not the country of manufacture. Reconciled against GS1's own list and English Wikipedia, with disagreements preserved rather than silently resolved.",
+        "license": "https://creativecommons.org/licenses/by/4.0/",
+        "creator": { "@type": "Organization", "name": "redpoint9" },
+        "keywords": ["GS1", "GTIN", "EAN", "barcode", "prefix"],
+        "isBasedOn": [
+          "https://www.gs1.org/standards/id-keys/company-prefix",
+          "https://en.wikipedia.org/wiki/List_of_GS1_country_codes"
+        ],
+        "distribution": [
+          {
+            "@type": "DataDownload",
+            "encodingFormat": "text/csv",
+            "contentUrl": "https://gs1-prefix-ranges.vercel.app/gs1-prefix.csv"
+          },
+          {
+            "@type": "DataDownload",
+            "encodingFormat": "application/json",
+            "contentUrl": "https://gs1-prefix-ranges.vercel.app/gs1-prefix.json"
+          }
+        ]
+      }
+    </script>
+
+    <style>
+      /* Tokens. Light is the bare :root so the un-stamped default resolves. */
+      :root {
+        --ground: #fbfaf8;
+        --panel: #ffffff;
+        --ink: #14140f;
+        --muted: #5d5c53;
+        --rule: #e3e0d8;
+        --accent: #8a5a2b;
+        --accent-soft: #f3ebe1;
+        --warn-ink: #7a4a12;
+        --warn-bg: #fdf4e4;
+        --mono: ui-monospace, "SF Mono", "Cascadia Mono", Menlo, monospace;
+      }
+      @media (prefers-color-scheme: dark) {
+        :root:not([data-theme="light"]) {
+          --ground: #14140f;
+          --panel: #1c1c16;
+          --ink: #f2efe7;
+          --muted: #a09d92;
+          --rule: #333026;
+          --accent: #d4a373;
+          --accent-soft: #2a2318;
+          --warn-ink: #e8c48c;
+          --warn-bg: #2b2416;
+        }
+      }
+      :root[data-theme="dark"] {
+        --ground: #14140f;
+        --panel: #1c1c16;
+        --ink: #f2efe7;
+        --muted: #a09d92;
+        --rule: #333026;
+        --accent: #d4a373;
+        --accent-soft: #2a2318;
+        --warn-ink: #e8c48c;
+        --warn-bg: #2b2416;
+      }
+
+      *,
+      *::before,
+      *::after {
+        box-sizing: border-box;
+      }
+      body {
+        margin: 0;
+        background: var(--ground);
+        color: var(--ink);
+        font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+        line-height: 1.6;
+        -webkit-text-size-adjust: 100%;
+      }
+      .wrap {
+        max-width: 62rem;
+        margin: 0 auto;
+        padding: 3rem 1.25rem 5rem;
+        display: flex;
+        flex-direction: column;
+        gap: 2.5rem;
+      }
+      header {
+        display: flex;
+        flex-direction: column;
+        gap: 0.75rem;
+      }
+      .eyebrow {
+        font-family: var(--mono);
+        font-size: 0.75rem;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        color: var(--accent);
+      }
+      h1 {
+        margin: 0;
+        font-size: clamp(1.9rem, 4.5vw, 2.8rem);
+        line-height: 1.12;
+        letter-spacing: -0.02em;
+        text-wrap: balance;
+      }
+      .lede {
+        margin: 0;
+        font-size: 1.12rem;
+        color: var(--muted);
+        max-width: 46ch;
+      }
+
+      .stats {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(8rem, 1fr));
+        gap: 1px;
+        background: var(--rule);
+        border: 1px solid var(--rule);
+        border-radius: 0.5rem;
+        overflow: hidden;
+      }
+      .stat {
+        background: var(--panel);
+        padding: 1rem 1.1rem;
+      }
+      .stat b {
+        display: block;
+        font-size: 1.6rem;
+        font-variant-numeric: tabular-nums;
+        letter-spacing: -0.01em;
+      }
+      .stat span {
+        font-size: 0.8rem;
+        color: var(--muted);
+      }
+
+      h2 {
+        margin: 0 0 0.6rem;
+        font-size: 1.3rem;
+        letter-spacing: -0.01em;
+      }
+      section > p:last-child {
+        margin-bottom: 0;
+      }
+      p {
+        margin: 0 0 0.9rem;
+        max-width: 68ch;
+      }
+
+      blockquote {
+        margin: 0 0 0.9rem;
+        padding: 0.85rem 1.1rem;
+        border-left: 2px solid var(--accent);
+        background: var(--accent-soft);
+        border-radius: 0 0.35rem 0.35rem 0;
+        color: var(--ink);
+        font-size: 0.97rem;
+        max-width: 68ch;
+      }
+      blockquote cite {
+        display: block;
+        margin-top: 0.4rem;
+        font-size: 0.82rem;
+        font-style: normal;
+        color: var(--muted);
+      }
+
+      .files {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+        gap: 0.75rem;
+      }
+      .file {
+        display: block;
+        padding: 0.9rem 1.05rem;
+        background: var(--panel);
+        border: 1px solid var(--rule);
+        border-radius: 0.5rem;
+        text-decoration: none;
+        color: inherit;
+        transition: border-color 0.15s ease;
+      }
+      .file:hover,
+      .file:focus-visible {
+        border-color: var(--accent);
+      }
+      .file code {
+        font-family: var(--mono);
+        font-size: 0.9rem;
+        color: var(--accent);
+      }
+      .file span {
+        display: block;
+        font-size: 0.83rem;
+        color: var(--muted);
+        margin-top: 0.15rem;
+      }
+
+      .tablewrap {
+        overflow-x: auto;
+        border: 1px solid var(--rule);
+        border-radius: 0.5rem;
+        background: var(--panel);
+      }
+      table {
+        border-collapse: collapse;
+        width: 100%;
+        font-size: 0.88rem;
+      }
+      th,
+      td {
+        text-align: left;
+        padding: 0.5rem 0.8rem;
+        border-bottom: 1px solid var(--rule);
+        white-space: nowrap;
+      }
+      th {
+        position: sticky;
+        top: 0;
+        background: var(--panel);
+        font-size: 0.74rem;
+        letter-spacing: 0.07em;
+        text-transform: uppercase;
+        color: var(--muted);
+      }
+      tbody tr:last-child td {
+        border-bottom: 0;
+      }
+      td.pfx {
+        font-family: var(--mono);
+        font-variant-numeric: tabular-nums;
+        color: var(--accent);
+      }
+      td.note {
+        white-space: normal;
+        color: var(--muted);
+        font-size: 0.83rem;
+        min-width: 16rem;
+      }
+      tr.flagged td.note {
+        color: var(--warn-ink);
+      }
+      tr.flagged {
+        background: var(--warn-bg);
+      }
+
+      .controls {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.6rem;
+        align-items: center;
+      }
+      input[type="search"] {
+        flex: 1 1 14rem;
+        padding: 0.55rem 0.8rem;
+        font: inherit;
+        font-size: 0.95rem;
+        color: var(--ink);
+        background: var(--panel);
+        border: 1px solid var(--rule);
+        border-radius: 0.4rem;
+      }
+      input[type="search"]:focus-visible {
+        outline: 2px solid var(--accent);
+        outline-offset: 1px;
+      }
+      .count {
+        font-size: 0.85rem;
+        color: var(--muted);
+        font-variant-numeric: tabular-nums;
+      }
+
+      footer {
+        border-top: 1px solid var(--rule);
+        padding-top: 1.25rem;
+        font-size: 0.88rem;
+        color: var(--muted);
+      }
+      a {
+        color: var(--accent);
+      }
+      @media (prefers-reduced-motion: reduce) {
+        * {
+          transition: none !important;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="wrap">
+      <header>
+        <p class="eyebrow">Open dataset &middot; CC BY 4.0</p>
+        <h1>GS1 prefix ranges, reconciled</h1>
+        <p class="lede">
+          Which GS1 organisation issued a barcode number &mdash; and why that is
+          not the same as where the product was made.
+        </p>
+      </header>
+
+      <div class="stats">
+        <div class="stat"><b>144</b><span>ranges</span></div>
+        <div class="stat"><b>122</b><span>countries</span></div>
+        <div class="stat"><b>2</b><span>sources reconciled</span></div>
+        <div class="stat"><b>2</b><span>disagreements kept</span></div>
+      </div>
+
+      <section>
+        <h2>What a GS1 prefix is, and what it is not</h2>
+        <p>
+          The first digits of a GTIN identify
+          <strong>the GS1 member organisation that allocated the number to the
+          brand owner</strong>. They do not identify where the product was made.
+          GS1 states this itself:
+        </p>
+        <blockquote>
+          Since GS1 user companies can manufacture products anywhere in the
+          world, GS1 Prefixes do not identify the country of origin for a given
+          product.
+          <cite>GS1</cite>
+        </blockquote>
+        <p>
+          This matters because the opposite belief is widespread. It circulates
+          in chain letters urging people to boycott a particular prefix, and most
+          lookup services reinforce it by labelling the field &ldquo;country of
+          origin&rdquo;. This dataset calls it
+          <code>issuing_organisation</code>, and
+          <code>organisation_country</code> means the country that organisation
+          sits in, not the country the goods came from. If you build a lookup on
+          this data, please do not rename those columns back.
+        </p>
+      </section>
+
+      <section>
+        <h2>Why this table rather than any other</h2>
+        <p>
+          It is reconciled against two sources rather than copied from one:
+          GS1&rsquo;s own prefix list, and English Wikipedia&rsquo;s
+          <em>List of GS1 country codes</em>. Where the two disagree,
+          GS1&rsquo;s reading is used and
+          <strong>the disagreement is kept</strong> in the <code>note</code>
+          field instead of being silently resolved. Two rows carry such a flag,
+          highlighted in the table below.
+        </p>
+        <p>
+          One caution if you maintain your own copy: several GS1 member
+          organisations publish stale versions of the list. GS1
+          Slovakia&rsquo;s still lists &ldquo;Serbia and Montenegro&rdquo;. A
+          stale source looks exactly like a current one, so check the date.
+        </p>
+      </section>
+
+      <section>
+        <h2>Download</h2>
+        <div class="files">
+          <a class="file" href="/gs1-prefix.csv" download>
+            <code>gs1-prefix.csv</code>
+            <span>The table, RFC 4180</span>
+          </a>
+          <a class="file" href="/gs1-prefix.json" download>
+            <code>gs1-prefix.json</code>
+            <span>Same, with source metadata</span>
+          </a>
+          <a class="file" href="/dcat-ap.jsonld" download>
+            <code>dcat-ap.jsonld</code>
+            <span>DCAT-AP catalogue record</span>
+          </a>
+        </div>
+      </section>
+
+      <section>
+        <h2>The data</h2>
+        <div class="controls">
+          <input
+            type="search"
+            id="q"
+            placeholder="Filter by prefix, organisation or country&hellip;"
+            aria-label="Filter the table"
+          />
+          <span class="count" id="count"></span>
+        </div>
+        <div class="tablewrap">
+          <table>
+            <thead>
+              <tr>
+                <th scope="col">Prefix</th>
+                <th scope="col">Issuing organisation</th>
+                <th scope="col">Organisation country</th>
+                <th scope="col">Note</th>
+              </tr>
+            </thead>
+            <tbody id="rows">
+              <tr>
+                <td colspan="4" class="note">Loading&hellip;</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <footer>
+        <p>
+          CC BY 4.0. Attribution to
+          <a href="https://smartatest.se/guider/ean-landsprefix"
+            >smartatest.se/guider/ean-landsprefix</a
+          >, the Swedish-language lookup tool this table is maintained
+          alongside.
+        </p>
+      </footer>
+    </div>
+
+    <script>
+      const rowsEl = document.getElementById("rows");
+      const countEl = document.getElementById("count");
+      const qEl = document.getElementById("q");
+      let ranges = [];
+
+      const esc = (s) =>
+        String(s ?? "").replace(
+          /[&<>"]/g,
+          (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" })[c],
+        );
+
+      function render(list) {
+        if (!list.length) {
+          rowsEl.innerHTML =
+            '<tr><td colspan="4" class="note">No ranges match that filter.</td></tr>';
+          countEl.textContent = "0 of " + ranges.length;
+          return;
+        }
+        rowsEl.innerHTML = list
+          .map((r) => {
+            const pfx =
+              r.prefixFrom === r.prefixTo
+                ? r.prefixFrom
+                : r.prefixFrom + "–" + r.prefixTo;
+            const flagged = (r.note || "").startsWith("⚠️");
+            return (
+              '<tr class="' +
+              (flagged ? "flagged" : "") +
+              '"><td class="pfx">' +
+              esc(pfx) +
+              "</td><td>" +
+              esc(r.issuingOrganisation || "—") +
+              "</td><td>" +
+              esc(r.organisationCountry || "—") +
+              '</td><td class="note">' +
+              esc(r.note || "") +
+              "</td></tr>"
+            );
+          })
+          .join("");
+        countEl.textContent = list.length + " of " + ranges.length;
+      }
+
+      function filter() {
+        const q = qEl.value.trim().toLowerCase();
+        if (!q) return render(ranges);
+        render(
+          ranges.filter((r) =>
+            [
+              r.prefixFrom,
+              r.prefixTo,
+              r.issuingOrganisation,
+              r.organisationCountry,
+              r.note,
+            ]
+              .join(" ")
+              .toLowerCase()
+              .includes(q),
+          ),
+        );
+      }
+
+      fetch("/gs1-prefix.json")
+        .then((r) => r.json())
+        .then((data) => {
+          ranges = data.ranges;
+          render(ranges);
+          qEl.addEventListener("input", filter);
+        })
+        .catch(() => {
+          rowsEl.innerHTML =
+            '<tr><td colspan="4" class="note">Could not load the data. The raw files are linked above.</td></tr>';
+        });
+    </script>
+  </body>
+</html>
