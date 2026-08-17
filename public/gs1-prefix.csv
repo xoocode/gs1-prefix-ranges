@@ -60,7 +60,7 @@ prefix_from,prefix_to,issuing_organisation,organisation_country,organisation_cou
 609,609,GS1 Mauritius,Mauritius,MU,,false
 610,610,,,,"Managed centrally by GS1, not allocated",false
 611,611,GS1 Morocco,Morocco,MA,,false
-612,612,GS1 Somalia,Somalia,SO,Single-sourced: appears in Wikipedia but not in GS1's own list,true
+612,612,GS1 Somalia,Somalia,SO,Appears in Wikipedia but not in GS1's own list,true
 613,613,GS1 Algeria,Algeria,DZ,,false
 614,614,,,,"Managed centrally by GS1, not allocated",false
 615,615,GS1 Nigeria,Nigeria,NG,,false
