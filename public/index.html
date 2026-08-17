@@ -184,10 +184,18 @@
         font-weight: 480;
         text-wrap: balance;
       }
+      /* Håll ihop den strukna satsen. Bryts den mitt i tappar den sin kraft:
+         "made" ensamt på en rad läses inte längre som en överstruken tanke. */
       .statement .not {
         color: var(--ink-3);
         text-decoration: line-through;
         text-decoration-thickness: from-font;
+        white-space: nowrap;
+      }
+      @media (max-width: 30rem) {
+        .statement .not {
+          white-space: normal;
+        }
       }
       .statement .is {
         color: var(--mark);
@@ -462,7 +470,7 @@
       <div class="statement">
         <p>
           A barcode prefix tells you
-          <span class="not">where a product was made</span>
+          <span class="not">where a product was made</span><br />
           <span class="is">who issued the number</span>.
         </p>
       </div>
